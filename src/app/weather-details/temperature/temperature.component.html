@@ -1,0 +1,11 @@
+<div id="container">
+    <h2>
+        Temperature: {{temperature}} <img class="celsius-logo" 
+        src="{{weatherDetails?.temp_units === 'celsius' ? '../../../assets/images/degree-celsius.jpg' : 
+        '../../../assets/images/degree-farenheit.png'}}">
+    </h2>
+    <h2>
+        Humidity: {{weatherDetails?.main?.humidity}}
+    </h2>
+   
+</div>

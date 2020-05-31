@@ -1,0 +1,81 @@
+<div class="form-group mode-class">
+    <label for="mode">Choose Mode</label>
+    <select class="form-control" id="mode" [(ngModel)]="selectedMode" name="mode_name" required>
+      <option value="default">Default Mode</option>
+      <option value="box">Box Mode</option>
+    </select>
+</div>
+<p-table #dt [value]="data" dataKey="id" styleClass="ui-table-countries" [rowHover]="true"
+    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
+    [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [filterDelay]="0" [globalFilterFields]="['name', 'capital']" *ngIf="selectedMode === 'default'">
+    <ng-template pTemplate="caption">
+        List of Countries in Default Mode
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="name">Country <p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="name">Capital</th>
+        </tr>
+        <tr>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'contains')" placeholder="Search by Country" class="ui-column-filter">
+            </th>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'capital', 'contains')" placeholder="Search by Capital" class="ui-column-filter">
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+        <tr class="ui-selectable-row">
+            <td>
+                <span class="ui-column-title">Country</span>
+                <img class="flag" [src]="item.flag">
+                <a style="vertical-align: middle; margin-left: .5em" routerLink="/weather" (click)="setCountryDetails(item)">{{item.name}}</a>
+            </td>
+            <td>
+                <span class="ui-column-title">Capital</span>
+                <span style="vertical-align: middle; margin-left: .5em">{{item.capital}}</span>
+            </td>
+        </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8" style="text-align:left">No customers found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-table #dt [value]="data" dataKey="id" styleClass="ui-table-countries" [rowHover]="true"
+    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
+    [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [filterDelay]="0" [globalFilterFields]="['name', 'capital']" *ngIf="selectedMode === 'box'">
+    <ng-template pTemplate="caption">
+        List of Countries in Country Only Mode
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="name">Country <p-sortIcon field="name"></p-sortIcon></th>
+        </tr>
+        <tr>
+            <th>
+                <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'contains')" placeholder="Search by Country" class="ui-column-filter">
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+        <tr class="ui-selectable-row">
+            <td>
+                <span class="ui-column-title">Country</span>
+                <img class="flag" [src]="item.flag">
+                <a style="vertical-align: middle; margin-left: .5em" routerLink="/weather" (click)="setCountryDetails(item)">{{item.name}}</a>
+            </td>
+        </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8" style="text-align:left">No customers found.</td>
+        </tr>
+    </ng-template>
+</p-table>

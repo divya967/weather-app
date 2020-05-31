@@ -1,0 +1,22 @@
+<h1>{{countryDetails.capital}}, {{countryDetails.name}}</h1>
+<span class="description" *ngIf="description">{{description}}</span>
+<a class="mode" (click)="changeMode()">Click here to change to {{mode}} units</a>
+<section class="section-tabs">
+    <nav>
+        <a *ngIf = "true"
+            [routerLinkActive]="'active'"
+            [routerLink]="'temperature'"
+        >Temperature</a>
+        <a *ngIf = "true"
+            [routerLinkActive]="'active'"
+            [routerLink]="'precipitation'"
+        >Precipitation</a>
+        <a *ngIf = "true"
+           [routerLinkActive]="'active'"
+           [routerLink]="'wind'"
+        >Wind</a>
+    </nav>
+</section>
+<section class="tab-wrp">
+<router-outlet></router-outlet>
+</section>

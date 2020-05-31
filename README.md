@@ -1,27 +1,48 @@
-# WeatherForecast
+# Development Environment
+    Dev environment includes Node.js and NPM(Node Package Manager). 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+# Install the angualr CLi (Please make sure you have node and npm installed)
+    npm install -g
+    npm install -g @angualr/cli
+
+# PrimeNG Angular-CLI
+
+    This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6. 
 
 ## Development server
+    Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Technologies & Libraries Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1) Angular 6, Typescript, HTML5, SASS
 
-## Build
+2) PrimeNg, AngularCdk
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Requirements Implemented
 
-## Running unit tests
+1) Created two web pages (Countries page and weather page)
+2) Countries component includes: Grid with searching, filtering and sorting along with Pagination.
+3) It provided duals mode feature to switch between default mode and country only mode
+4) User can click on country to navigate to next page of weather details.
+5) Weather page includes tabs (temperature, precipitaion, wind) which further provides the datails of:
+        a)  Temp ,Humidity, description about weather, speed of wind. Below is the url:
+                    api.openweathermap.org/data/2.5/weather?q=Algiers&units=metric&APPID=794ee95e63c5a32aaf88cd813fa2e425
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+        b) displaying images based on temparature and weather : images are fetced from below url based on icon field which we got in country weather details url.
+               http://openweathermap.org/img/wn/04d.png   
 
-## Running end-to-end tests
+6) Also provided the link to switch between metric and imperial modes               
+        metric:   api.openweathermap.org/data/2.5/weather?q=Algiers&units=metric&APPID=794ee95e63c5a32aaf88cd813fa2e425
+        imperial: api.openweathermap.org/data/2.5/weather?q=Algiers&units=imperial&APPID=794ee95e63c5a32aaf88cd813fa2e425   
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ # Angualr Features used
+  1) Routing
+  2) pagination
+  3) data binding
+  4) Components data communication
+  5) Dependecny injection
+  6) observables (Behavior subject)
+  7) oops concepts
+  
+# Also attaching screenshots of UI created (Including all components).   
